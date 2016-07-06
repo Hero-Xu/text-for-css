@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		/*选中的是第一个li元素 伪类选择器*/
+		ul li:first-child{
+			background: blue;
+		}
+		p{
+			width: 300px;
+		}
+		/*选中的不是一个实际的元素 而是里面的第一行文字 所以叫伪对象  这里用了：：来和伪类进行区分 其实:也是可以的*/
+		p::first-line{
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	<p>
+		王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅王旭最帅
+	</p>
+</body>
+</html>

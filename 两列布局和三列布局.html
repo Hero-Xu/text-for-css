@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>两列布局和三列布局</title>
+	<style>
+	/*两列布局css*/
+		#div1{
+			width: 300px;
+			height: 300px;
+			background: #090;
+			float: left;
+		}
+		#div2{
+			height: 300px;
+			background: #900;
+			/*这里不能使用浮动 浮动后元素的宽和高由内容撑开 div2不见*/
+			/*float: right;*/
+
+			/*让出空间  由于div2宽度是自适应 填补剩余的空缺，div
+			1浮动后空间释放 div2占据了整个父元素额宽度，设置margin后空间减小，div2的宽度减小*/
+			margin-left: 310px;
+		}
+		/*三列布局css*/
+		#div1{
+			width: 300px;
+			height: 300px;
+			background: #090;
+			float: left;
+		}
+		#div2{
+			height: 300px;
+			background: #900;
+			/*这里不能使用浮动 浮动后元素的宽和高由内容撑开 div2不见*/
+			/*float: right;*/
+
+			/*让出空间  由于div2宽度是自适应 填补剩余的空缺，div
+			1浮动后空间释放 div2占据了整个父元素额宽度，设置margin后空间减小，div2的宽度减小*/
+			margin-left: 310px;
+			margin-right: 310px;
+		}
+		#div3{
+			width: 300px;
+			height: 300px;
+			background: #009;
+			float: right;
+			/*样式写到这发现右侧的空间确实让出来了 可是div3还是没有上去，原因是其实空间没有真正的让出来，div2是快块元素，虽然设置了margin但还是占据着全部的空间，有两种解决办法 一个就是将div2和div3的html的结构顺序颠倒，也就是令div3比div2先占上位置，这样中间的div2就会自适应的上去；第二种办法是采用定位，把div3设置个top0(在本例中忽略默认的8个像素)*/
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	</style>
+</head>
+<body>
+	<!-- 两列布局 左侧固定 右侧自适应  三列布局 左右固定 中间自适应-->
+	<div id="div1"></div>
+	<div id="div2"></div>
+	<div id="div3"></div>
+
+</body>
+</html>
